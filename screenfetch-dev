@@ -1279,7 +1279,7 @@ detectkernel () {
 		kernel=$(uname -a | cut -f 3- -d ' ')
 	else
 		# compatibility for older versions of OS X:
-		kernel=$(uname -m && uname -sr)
+		kernel=$(uname -m && uname -sr | cut -f 1 -d '-')
 		kernel=${kernel//$'\n'/ }
 		#kernel=( $(uname -srm) )
 		#kernel="${kernel[${#kernel[@]}-1]} ${kernel[@]:0:${#kernel[@]}-1}"
