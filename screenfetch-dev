@@ -1580,9 +1580,9 @@ detectcpu () {
 			temperature=$(bc <<< "scale=1; $(cat "$thermal")/1000")
 		fi
 	fi
-	if [ -n "$temperature" ]; then
-		cpu="$cpu [${temperature}°C]"
-	fi
+	# if [ -n "$temperature" ]; then
+	# 	cpu="$cpu [${temperature}°C]"
+	# fi
 	cpu=$(sed $REGEXP 's/\([tT][mM]\)|\([Rr]\)|[pP]rocessor|CPU//g' <<< "${cpu}" | xargs)
 	verboseOut "Finding current CPU...found as '$cpu'"
 }
