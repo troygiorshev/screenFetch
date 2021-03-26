@@ -818,7 +818,7 @@ detectdistro () {
 				"Ubuntu")
 					for each in "${ubuntu_codenames[@]}"; do
 						if [[ "${each,,}" =~ "${distro_codename,,}" ]]; then
-							distro_codename="$each"
+							distro_codename="n/a"
 						fi
 					done
 					;;
